@@ -1,4 +1,4 @@
-package creational.PrototypePattern;
+package creational.prototypePattern;
 
 import java.util.ArrayList;
 import java.util.List;

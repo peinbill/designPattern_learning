@@ -1,4 +1,4 @@
-package creational.PrototypePattern;
+package creational.prototypePattern;
 
 public class PrototypePatternTest {
 
