@@ -4,22 +4,30 @@ public class ThreadSafeSingleton {
 
     private static ThreadSafeSingleton instance;
 
-    private ThreadSafeSingleton(){}
+    private ThreadSafeSingleton() {
+    }
 
-    public static synchronized ThreadSafeSingleton getInstance(){
-        if(instance==null){
+    public static synchronized ThreadSafeSingleton getInstance() {
+        if (instance == null) {
             instance = new ThreadSafeSingleton();
         }
         return instance;
     }
 
-    // using double check
+}
 
-    public static ThreadSafeSingleton getInstance2(){
+class ThreadSafeSingleton2{
+    private static ThreadSafeSingleton2 instance;
+
+    private ThreadSafeSingleton2() {
+    }
+
+    // using double check
+    public static ThreadSafeSingleton2 getInstance2(){
         if(instance==null){
-            synchronized (ThreadSafeSingleton.class){
+            synchronized (ThreadSafeSingleton2.class){
                 if(instance==null){
-                    instance = new ThreadSafeSingleton();
+                    instance = new ThreadSafeSingleton2();
                 }
             }
         }
